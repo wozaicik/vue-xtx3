@@ -1,0 +1,18 @@
+<template>
+    <div class="top-category">
+        TopCategory
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'TopCategory',
+  setup () {
+
+  }
+}
+</script>
+
+<style scoped lang="less">
+
+</style>
