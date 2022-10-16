@@ -12,22 +12,24 @@
   </template>
 
 <script>
-import { onMounted, ref } from 'vue'
+// import { onMounted, ref } from 'vue'
 import AppHeaderNav from './app-header-nav'
+import { useWindowScroll } from '@vueuse/core'
+
 export default {
   name: 'AppHeaderSticky',
   components: { AppHeaderNav },
   setup () {
-    // 记录y轴卷曲的高度
-    const y = ref(0)
-    // 当页面滚动的时候更新它
-    onMounted(() => {
-      window.onscroll = () => {
-        const scrollTop = document.documentElement.scrollTop
-        y.value = scrollTop
-      }
-    })
-
+    // // 记录y轴卷曲的高度
+    // const y = ref(0)
+    // // 当页面滚动的时候更新它
+    // onMounted(() => {
+    //   window.onscroll = () => {
+    //     const scrollTop = document.documentElement.scrollTop
+    //     y.value = scrollTop
+    //   }
+    // })
+    const { y } = useWindowScroll()
     return { y }
   }
 }
